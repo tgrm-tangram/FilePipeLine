@@ -8,10 +8,9 @@ namespace FilePipeLine
         {
             Console.WriteLine("Hello World!");
             PipeLineBuilder builder = new PipeLineBuilder();
-            builder.SetCollector(new SimpleFileCollector("*.txt", @"/Users/wanglx/Desktop/target"))
-                .SetOutputer(new SimpleFileOutputer(@"/Users/wanglx/Desktop/out", "output.txt"))
-                .Assemble(new ExtractColumnProcessor(0, 1, 3))
-                .Model(TransmitModel.LINE)
+            builder.SetCollector(new SingleColumnFileCollector("*.txt", @"/Users/wanglx/Desktop/target"))
+                .SetOutputer(new TagFileOutputer(@"/Users/wanglx/Desktop/out"))
+                .Assemble(new NameTagProcessor())
                 .Build()
                 .Run();
         }

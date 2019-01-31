@@ -8,5 +8,6 @@
   <ItemGroup>
     <Compile Remove="NoopOutputer.cs" />
     <Compile Remove="LinesPipeLine.cs" />
+    <Compile Remove="INameTagProcessor.cs" />
   </ItemGroup>
 </Project>
